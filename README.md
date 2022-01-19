@@ -31,6 +31,8 @@ samples, guidance on mobile development, and a full API reference.
 > To use the app, it is necessary to complete a simple registration as shown in the image below.
 
 ![imagem_1](https://user-images.githubusercontent.com/67721369/150146539-73ec4e14-6159-4f34-b00d-362deaf4570c.png)
+![imagem_2](https://user-images.githubusercontent.com/67721369/150147555-1f4cb9b9-57cb-44f8-aae2-ce5ad0342543.png)
+
 
 
 ## API Used In The Project
