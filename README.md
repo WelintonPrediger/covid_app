@@ -29,8 +29,8 @@ samples, guidance on mobile development, and a full API reference.
 
 > An application to disseminate information about the situation of cities in relation to the COVID-19 pandemic.
 > To use the app, it is necessary to complete a simple registration as shown in the image below.
-![imagem_1](https://user-images.githubusercontent.com/67721369/150146539-73ec4e14-6159-4f34-b00d-362deaf4570c.png)
 
+![imagem_1](https://user-images.githubusercontent.com/67721369/150146539-73ec4e14-6159-4f34-b00d-362deaf4570c.png)
 
 
 ## API Used In The Project
