@@ -37,17 +37,20 @@ class _DialogHomeFilterState extends State<DialogHomeFilter> {
               label: const Text('Voltar')
             ),
             const SizedBox(width: 20.0),
-            ComponentElevatedButton(
-              icon: Icons.search,
-              title: 'Pesquisar',
+            ElevatedButton.icon(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)))
+              ),
               onPressed: () {
                 Navigator.of(context).pop([
                   _dateController.text.isEmpty ? null : _dateController.text,
                   _stateController.text.isEmpty ? null : _stateController.text.toUpperCase(),
                   _ibgeCodeController.text.isEmpty ? null : _ibgeCodeController.text
                 ]);
-              }
-            )
+              },
+              icon: const Icon(Icons.search),
+              label: const Text('Pesquisar')
+            ),
           ],
         ),
       );

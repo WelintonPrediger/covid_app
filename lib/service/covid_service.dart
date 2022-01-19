@@ -12,7 +12,7 @@ abstract class CovidServiceHelper {
 class CovidService extends CovidServiceHelper {
 
   @override
-  Future<List<Covid>?> fetchAllData({int? page = 1, int? pageSize = 100}) async {
+  Future<List<Covid>?> fetchAllData({int? page = 1, int? pageSize = 20}) async {
 
     log('Fetch All Data Service');
     log('URL: ${Constant.baseUrl}?page=$page&page_size=$pageSize');
@@ -36,7 +36,7 @@ class CovidService extends CovidServiceHelper {
   }
 
   @override
-  Future<List<Covid>?> filterCovid({required List listFilters, int? page = 1, int? pageSize = 100}) async {
+  Future<List<Covid>?> filterCovid({required List listFilters, int? page = 1, int? pageSize = 20}) async {
 
     log('Filter Covid Service');
 

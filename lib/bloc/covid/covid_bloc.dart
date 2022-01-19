@@ -14,6 +14,8 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
     on<CovidInitEvent>((event, emit) => _fetchAllData(event, emit));
     on<CovidFilterEvent>((event, emit) => _covidFilter(event, emit));
     on<CovidDetailEvent>((event, emit) => emit(CovidDetailState(covid: event.covid)));
+    on<CovidNextDataEvent>((event, emit) => _nextPageData(event, emit));
+    on<CovidPreviousDataEvent>((event, emit) => _previousPageData(event, emit));
 
   }
 
@@ -28,7 +30,7 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
       List<Covid>? listCovidData = await _covidService.fetchAllData();
 
       if(listCovidData != null) {
-        emit(CovidAllDataState(listCovidData: listCovidData));
+        emit(CovidAllDataState(listCovidData: listCovidData, page: event.page ?? 1));
       } else {
         emit(CovidErrorState(message: 'Ops não foi possível buscar os dados do Covid-19.'));
       }
@@ -59,6 +61,46 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
       emit(CovidErrorState(message: 'Ops algum erro ocorreu. $error'));
     }
 
+  }
+
+  Future<void> _nextPageData(CovidNextDataEvent event, Emitter<CovidState> emit) async {
+    log('Fetch All Data');
+
+    emit(CovidLoadingState());
+
+    try {
+
+      List<Covid>? listCovidData = await _covidService.fetchAllData(page: event.page);
+
+      if(listCovidData != null) {
+        emit(CovidAllDataState(listCovidData: listCovidData, page: event.page));
+      } else {
+        emit(CovidErrorState(message: 'Ops não foi possível buscar os dados do Covid-19.'));
+      }
+
+    } catch(error) {
+      emit(CovidErrorState(message: 'Ops algum erro ocorreu. $error'));
+    }
+  }
+
+  Future<void> _previousPageData(CovidPreviousDataEvent event, Emitter<CovidState> emit) async {
+    log('Fetch All Data');
+
+    emit(CovidLoadingState());
+
+    try {
+
+      List<Covid>? listCovidData = await _covidService.fetchAllData(page: event.page);
+
+      if(listCovidData != null) {
+        emit(CovidAllDataState(listCovidData: listCovidData, page: event.page));
+      } else {
+        emit(CovidErrorState(message: 'Ops não foi possível buscar os dados do Covid-19.'));
+      }
+
+    } catch(error) {
+      emit(CovidErrorState(message: 'Ops algum erro ocorreu. $error'));
+    }
   }
 
 }

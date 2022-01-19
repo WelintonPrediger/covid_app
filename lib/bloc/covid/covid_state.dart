@@ -13,8 +13,12 @@ class CovidLoadingState extends CovidState {}
 class CovidAllDataState extends CovidState {
 
   final List<Covid> listCovidData;
+  final int page;
 
-  CovidAllDataState({required this.listCovidData});
+  CovidAllDataState({required this.listCovidData, required this.page});
+
+  @override
+  List<Object> get props => [listCovidData, page];
 
 }
 

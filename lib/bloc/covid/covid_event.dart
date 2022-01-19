@@ -6,7 +6,12 @@ abstract class CovidEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class CovidInitEvent extends CovidEvent {}
+class CovidInitEvent extends CovidEvent {
+
+  final int? page;
+
+  CovidInitEvent({this.page});
+}
 
 class CovidFilterEvent extends CovidEvent {
 
@@ -26,4 +31,24 @@ class CovidDetailEvent extends CovidEvent {
 
   @override
   List<Object> get props => [covid];
+}
+
+class CovidNextDataEvent extends CovidEvent {
+
+  final int page;
+
+  CovidNextDataEvent({required this.page});
+
+  @override
+  List<Object> get props => [page];
+}
+
+class CovidPreviousDataEvent extends CovidEvent {
+
+  final int page;
+
+  CovidPreviousDataEvent({required this.page});
+
+  @override
+  List<Object> get props => [page];
 }

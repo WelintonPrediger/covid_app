@@ -17,6 +17,7 @@ class ViewHome extends StatefulWidget {
 class _ViewHomeState extends State<ViewHome> {
 
   late List<Covid> listCovidData;
+  int? page = 1;
 
   _screen({required CovidBloc covidBloc, required List<Covid> listCovidData}) {
     return Scaffold(
@@ -41,10 +42,20 @@ class _ViewHomeState extends State<ViewHome> {
         ),
       )
           : ListView.builder(
-        itemCount: listCovidData.length,
-        itemBuilder: (context, index) {
-          return ComponentCard(covid: listCovidData[index], onTap: () => covidBloc.add(CovidDetailEvent(covid: listCovidData[index])));
-        },
+              itemCount: listCovidData.length,
+              itemBuilder: (context, index) {
+                return ComponentCard(covid: listCovidData[index], onTap: () => covidBloc.add(CovidDetailEvent(covid: listCovidData[index])));
+              },
+            ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 30.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Visibility(visible: page! > 1, child: FloatingActionButton(onPressed: () => covidBloc.add(CovidPreviousDataEvent(page: page! - 1)), tooltip: 'Voltar', child: const Icon(Icons.arrow_back_ios),)),
+            FloatingActionButton(onPressed: () => covidBloc.add(CovidNextDataEvent(page: page! + 1)), tooltip: 'Próxima', child: const Icon(Icons.arrow_forward_ios_rounded),),
+          ],
+        ),
       ),
     );
   }
@@ -60,9 +71,10 @@ class _ViewHomeState extends State<ViewHome> {
           builder: (context, state) {
 
             if(state is CovidInitState) {
-              _covidBloc.add(CovidInitEvent());
+              _covidBloc.add(CovidInitEvent(page: page));
 
             } else if(state is CovidAllDataState) {
+              page = state.page;
               listCovidData = state.listCovidData;
               return _screen(covidBloc: _covidBloc, listCovidData: listCovidData);
 
