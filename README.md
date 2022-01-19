@@ -14,3 +14,18 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Main Libraries and versions
+
+google_fonts: ^2.2.0
+flutter_native_splash: ^1.3.3
+flutter_bloc: ^8.0.1
+equatable: ^2.0.3
+sqflite: ^2.0.2
+http: ^0.13.4
+date_time_picker: ^2.1.0
+
+## App description
+
+An application to disseminate information about the situation of cities in relation to the COVID-19 pandemic.
+
