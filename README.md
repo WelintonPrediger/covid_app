@@ -31,6 +31,6 @@ samples, guidance on mobile development, and a full API reference.
 
 ## API Used In The Project
 
-link para informações sobre o Brasi.io [Click Aqui](https://blog.brasil.io/2020/10/10/como-acessar-os-dados-do-brasil-io/):
+link para informações sobre o utilização da api brasi.io [Click Aqui](https://blog.brasil.io/2020/10/10/como-acessar-os-dados-do-brasil-io/):
 > link API: https://api.brasil.io/v1/dataset/covid19/caso/data
 
