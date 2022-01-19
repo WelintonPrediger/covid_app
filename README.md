@@ -35,7 +35,7 @@ samples, guidance on mobile development, and a full API reference.
 ![imagem_3](https://user-images.githubusercontent.com/67721369/150162713-a5d3cdb8-9b5d-444d-a070-aed212dabfa9.png)
 ![imagem_4](https://user-images.githubusercontent.com/67721369/150163465-d25ae3fe-bdde-4259-b4b0-d245f4e4c710.png)
 
-## API Used In The Project
+## API
 
-link para informações sobre a utilização da api brasi.io [Click Aqui](https://blog.brasil.io/2020/10/10/como-acessar-os-dados-do-brasil-io/):
+link to information about using the brasil.io api [Click Aqui](https://blog.brasil.io/2020/10/10/como-acessar-os-dados-do-brasil-io/):
 > link API: https://api.brasil.io/v1/dataset/covid19/caso/data
