@@ -44,7 +44,7 @@ class ComponentCard extends StatelessWidget {
               SizedBox(height: height / 2),
               Text('Óbitos: ${covid.deaths!}'),
               SizedBox(height: height / 2),
-              Text('Código IBGE: ${covid.ibgeCityCode!}'),
+              Text('Indice de Óbitos: ${covid.deathRate!}%'),
               SizedBox(height: height / 2),
             ],
           ),
