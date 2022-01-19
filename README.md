@@ -29,6 +29,9 @@ samples, guidance on mobile development, and a full API reference.
 
 > An application to disseminate information about the situation of cities in relation to the COVID-19 pandemic.
 > To use the app, it is necessary to complete a simple registration as shown in the image below and then sign in app.
+### User
+> User: welinton@gmail.com
+> Pass: 12345
 
 ![imagem_1](https://user-images.githubusercontent.com/67721369/150146539-73ec4e14-6159-4f34-b00d-362deaf4570c.png)
 ![imagem_2](https://user-images.githubusercontent.com/67721369/150147555-1f4cb9b9-57cb-44f8-aae2-ce5ad0342543.png)
